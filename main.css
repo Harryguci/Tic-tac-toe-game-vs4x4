@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --bg-color-1: whitesmoke;
+  --bg-color-2: rgb(30, 30, 70);
+}
+html,
+body {
+  background-color: var(--bg-color-1);
+  font-family: "Quicksand", sans-serif;
+  transition: background-color 0.3s ease-in-out;
+}
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.game-screen {
+  height: 80%;
+  width: 80%;
+  max-width: 700px;
+  max-height: 700px;
+  padding: 0;
+  backgro
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 3px 3px 25px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 768px) {
+  .game-screen {
+    width: 90%;
+  }
+}
+
+.game-screen__title {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 10px;
+  text-shadow: 5px 0px rgba(240, 50, 50, 0.7);
+}
+.game-screen__header {
+  height: 100px;
+  background-color: #222831;
+  margin: 0;
+}
+.game-screen__main {
+  display: block;
+  width: 100%;
+  height: fit-content;
+  max-height: 700px;
+  margin: 0;
+  background-color: white;
+}
+.game-screen__main .row {
+  margin: 0;
+  width: 100%;
+}
+.game-screen__cell {
+  display: flex;
+  padding: 2px;
+  background-clip: content-box;
+  background-color: gray;
+  background-color: #00adb5;
+  color: rgb(66, 66, 66);
+  font-size: 100px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.game-screen__cell:hover {
+  filter: brightness(80%);
+}
+
+.game-screen__cell.active {
+  background-color: white;
+}
+.message {
+  position: absolute;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.message__inner {
+  padding: 150px 100px 20px 100px;
+  padding-top: 100px;
+  width: fit-content;
+  background: whitesmoke;
+  border-radius: 10px;
+  height: auto;
+  color: black;
+  position: absolute;
+  font-weight: bold;
+  overflow: hidden;
+  font-size: 35px;
+}
+
+.message__inner::before {
+  font-size: 16px;
+  color: white;
+  padding: 10px 20px;
+  font-weight: 100;
+  content: "Message";
+  display: block;
+  position: absolute;
+  background-color: rgb(255, 81, 0);
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+}
+
+.reload-btn {
+  display: block;
+  position: relative;
+  bottom: 0;
+  background-color: whitesmoke;
+  padding: 10px;
+
+  margin: 20px auto;
+  height: fit-content;
+  /* transform: translate(-50%, 80px); */
+  background-color: rgb(255, 81, 0);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 600px) {
+  .game-screen {
+    height: fit-content;
+  }
+  .game-screen__cell {
+    font-size: 35px;
+  }
+  .message__inner {
+    font-size: 20px;
+    text-align: center;
+    width: 70%;
+    padding: 100px 0px 0 0;
+    height: auto;
+  }
+}
